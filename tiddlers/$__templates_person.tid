@@ -1,0 +1,24 @@
+code-body: yes
+created: 20260207223305806
+list-before: $:/core/ui/ViewTemplate/body
+modified: 20260207223336371
+revision: 0
+tags: $:/tags/ViewTemplate
+title: $:/templates/person
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]tag[Person]]">
+<table>
+<$list filter="[tag<currentTiddler>sort[time]]">
+<tr>
+<th style="text-align: left;"><$view field="time" format="date" template="YYYY mmm 0DD 0hh:0mm"/>. <small>{{!!from}} → {{!!to}}. <span style="float:right"><$link>Open mail in context</$link></span></small></th>
+</tr>
+<tr>
+<td style="padding-left: 60px">
+<b>{{!!subject}}</b>
+<pre>{{!!text}}</pre>
+</td>
+</tr>
+</$list>
+</table>
+</$list>

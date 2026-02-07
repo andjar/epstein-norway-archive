@@ -1,0 +1,19 @@
+code-body: yes
+created: 20260207214127264
+list-before: $:/core/ui/ViewTemplate/body
+modified: 20260207215658745
+revision: 0
+tags: $:/tags/ViewTemplate
+title: $:/templates/mails
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]tag[Mail]]">
+<div style="background: #F8F8F8">
+{{||$:/templates/mail}}
+</div>
+<div style="padding-left: 40px">
+<$list filter="[parent{!!messageid}]">
+{{||$:/templates/mails}}
+</$list>
+</div>
+</$list>

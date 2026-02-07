@@ -1,11 +1,12 @@
 code-body: yes
 created: 20260207174458085
-modified: 20260207213116210
+modified: 20260207214845661
 revision: 0
 tags: 
 title: $:/templates/mail
 type: text/vnd.tiddlywiki
 
+<div style="padding: 10px;">
 <div class="email-meta">
 <small>
 <span class="email-from">{{!!from}}</span> → <span class="email-to">{{!!to}}</span><br/>
@@ -13,9 +14,9 @@ type: text/vnd.tiddlywiki
 <span class="email-subject"> Subject: {{!!subject}}</span></b>
 </small></div>
 <div class="email-content">
-
+<pre>
 {{!!text}}
-
+</pre>
 </div>
 
 <div class="footer-sources">
@@ -25,13 +26,5 @@ Sources:
 <$link><<counter>></$link>
 </$list>
 </small>
-</div>
-
-<div class="link-footer">
-<div class="link-parent">
-<$list filter="[all[current]has[parent]]"><$link to={{!!parent}}>← Previous</$link></$list>
-</div>
-<div class="link-children">
-<$list filter="[parent<currentTiddler>]"><$link to={{!!title}}>Next →</$link></$list>
 </div>
 </div>

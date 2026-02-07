@@ -1,0 +1,8 @@
+created: 20260207215745881
+modified: 20260207215808510
+tags: $:/tags/Stylesheet
+title: $:/templates/hide-text
+
+.tc-tagged-Mail .tc-tiddler-body {
+    display: none;
+}

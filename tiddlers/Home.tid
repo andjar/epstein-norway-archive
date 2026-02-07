@@ -1,5 +1,28 @@
 created: 20260207170538282
-modified: 20260207170557783
+modified: 20260207220707011
+revision: 0
 tags: 
 title: Home
 type: text/vnd.tiddlywiki
+
+<table>
+<thead>
+  <tr>
+    <th>Name (Click to open email threads)</th>
+    <th>Number of emails</th>
+  </tr>
+</thead>
+<$list filter="[tag[Person]]">
+<tr>
+  <td>
+    <$button class="tc-btn-invisible tc-tiddlylink">
+      <$list filter="[tag<currentTiddler>field:parent[]]">
+        <$action-navigate $to=<<currentTiddler>> />
+      </$list>
+      <$view field="title"/>
+    </$button>
+  </td>
+  <td><$count filter="[tag<currentTiddler>]"/></td>
+</tr>
+</$list>
+</table>

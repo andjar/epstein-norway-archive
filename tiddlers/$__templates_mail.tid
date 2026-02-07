@@ -1,0 +1,23 @@
+code-body: yes
+created: 20260207174458085
+modified: 20260207174521026
+tags: 
+title: $:/templates/mail
+type: text/vnd.tiddlywiki
+
+<div class="email-meta">
+<small>
+<b><$view field="time" format="date" template="ddd. DD. mmm. YY. 0hh:0mm."/></b>
+<span class="email-from">{{!!from}}</span> → <span class="email-to">{{!!to}}</span><br/>
+<b>Subject: {{!!subject}}</b>
+</small>
+<blockquote><div style="white-space: pre-wrap; word-wrap: break-word;">{{!!text}}</div></blockquote>
+
+<div class="link-footer">
+<div class="link-parent">
+<$list filter="[all[current]has[parent]]"><$link to={{!!parent}}>← Previous</$link></$list>
+</div>
+<div class="link-children">
+<$list filter="[parent<currentTiddler>]"><$link to={{!!title}}>Next →</$link></$list>
+</div>
+</div>

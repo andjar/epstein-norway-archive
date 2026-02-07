@@ -1,17 +1,31 @@
 code-body: yes
 created: 20260207174458085
-modified: 20260207174521026
+modified: 20260207213116210
+revision: 0
 tags: 
 title: $:/templates/mail
 type: text/vnd.tiddlywiki
 
 <div class="email-meta">
 <small>
-<b><$view field="time" format="date" template="ddd. DD. mmm. YY. 0hh:0mm."/></b>
 <span class="email-from">{{!!from}}</span> → <span class="email-to">{{!!to}}</span><br/>
-<b>Subject: {{!!subject}}</b>
+<b><span class="email-datetime"><$view field="time" format="date" template="ddd. DD. mmm. YY. 0hh:0mm."/></span>
+<span class="email-subject"> Subject: {{!!subject}}</span></b>
+</small></div>
+<div class="email-content">
+
+{{!!text}}
+
+</div>
+
+<div class="footer-sources">
+<small>
+Sources: 
+<$list filter="[all[current]get[source]enlist-input[]addprefix[$:/sources/]]" counter="counter">
+<$link><<counter>></$link>
+</$list>
 </small>
-<blockquote><div style="white-space: pre-wrap; word-wrap: break-word;">{{!!text}}</div></blockquote>
+</div>
 
 <div class="link-footer">
 <div class="link-parent">

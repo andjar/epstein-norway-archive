@@ -1,0 +1,12 @@
+code-body: yes
+created: 20260207233258476
+list-before: $:/templates/mails
+modified: 20260207233805653
+revision: 0
+tags: $:/tags/ViewTemplate
+title: $:/templates/has-parent
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]tag[Mail]has[parent]get[parent]addprefix[$:/mails/]]">
+<$link to=<<currentTiddler>> >Click here to open parent mail</$link>
+</$list>

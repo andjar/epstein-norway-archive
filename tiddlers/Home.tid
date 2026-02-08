@@ -1,5 +1,5 @@
 created: 20260207170538282
-modified: 20260207223518748
+modified: 20260207232948840
 revision: 0
 tags: 
 title: Home
@@ -28,3 +28,42 @@ type: text/vnd.tiddlywiki
 </tr>
 </$list>
 </table>
+
+<$list filter="[tag[Person]]" variable="person">
+
+!!! <$link to=<<person>> />
+
+<table>
+  <thead>
+    <tr>
+      <th style="background:#f4f4f4;">Year</th>
+      <$list filter="01 02 03 04 05 06 07 08 09 10 11 12" variable="month">
+        <th style="background:#f4f4f4;"><$text text={{{ [<month>addprefix[2024]addsuffix[01]format:date[mmm]] }}}/></th>
+      </$list>
+      <th style="background:#eee;">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <$list filter="[tag<person>has[time]get[time]format:date[YYYY]unique[]sort[]]" variable="year">
+      <tr>
+        <th><<year>></th>
+        <$list filter="01 02 03 04 05 06 07 08 09 10 11 12" variable="month">
+          <$let 
+            cellCount={{{ [tag<person>has[time]] :filter[get[time]format:date[YYYY]match<year>] :filter[get[time]format:date[0MM]match<month>] +[count[]] }}}
+            opacity={{{ [<cellCount>divide[25]min[5]] }}}
+            textColor={{{ [<opacity>compare:number:gt[0.6]then[white]else[black]] }}}
+          >
+            <td style={{{ [<cellCount>compare:number:gt[0]then[background-color:rgba(255, 0, 0, ]addsuffix<opacity>addsuffix[);color:]addsuffix<textColor>addsuffix[;]] }}}>
+              <<cellCount>>
+            </td>
+          </$let>
+        </$list>
+        <td style="background:#eee; font-weight:bold;">
+          <$count filter="[tag<person>has[time]] :filter[get[time]format:date[YYYY]match<year>]"/>
+        </td>
+      </tr>
+    </$list>
+  </tbody>
+</table>
+
+</$list>

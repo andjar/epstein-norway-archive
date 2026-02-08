@@ -1,3 +1,7 @@
+## Grensesnitt
+
+Se oversikten her: https://andjar.github.io/epstein-norway-archive/
+
 ## Status
 
 Prosjektet er pågående og langt fra ferdig. Teksten er primært hentet fra https://github.com/promexdotme/epstein-justice-files-text/ og må kryss-sjekkes mot original-kildene.

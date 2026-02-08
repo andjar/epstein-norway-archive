@@ -1,5 +1,5 @@
 created: 20260207170538282
-modified: 20260208141532552
+modified: 20260208191239099
 revision: 0
 tags: 
 title: Home
@@ -9,9 +9,7 @@ type: text/vnd.tiddlywiki
 
 To contribute, see: https://github.com/andjar/epstein-norway-archive
 
-Click the {{$:/core/ui/Buttons/permalink}} to get a link to the specific mail, or {{$:/core/ui/Buttons/export-tiddler}} to export it. There is also an edit button: {{$:/core/ui/Buttons/edit}}, but changes must be downloaded and pushed to the github repository to have any effect.
-
-Some tools:
+Click the {{||$:/core/ui/Buttons/permalink}} to get a link to the specific mail, or {{||$:/core/ui/Buttons/export-tiddler}} to export it. There is also an edit button: {{||$:/core/ui/Buttons/edit}}, but changes must be downloaded and pushed to the github repository to have any effect. Some useful tools:
 
 <$let tv-config-toolbar-icons="yes"
 	tv-config-toolbar-text="yes"
@@ -47,7 +45,7 @@ Some tools:
   <td><$link /></td>
   <td>
     <$button class="tc-btn-invisible tc-tiddlylink">
-      <$list filter="[tag<currentTiddler>field:parent[]]">
+      <$list filter="[tag<currentTiddler>field:parent[]!sort[time]]">
         <$action-navigate $to=<<currentTiddler>> />
       </$list>
       Open all mail threads

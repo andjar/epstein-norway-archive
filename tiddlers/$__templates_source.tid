@@ -1,20 +1,20 @@
 code-body: yes
 created: 20260207234853030
 list-before: $:/core/ui/ViewTemplate/body
-modified: 20260208000313991
+modified: 20260208192324922
 revision: 0
 tags: $:/tags/ViewTemplate
 title: $:/templates/source
 type: text/vnd.tiddlywiki
 
-<$list filter="[all[current]tag[Source]get[file]]">
+<$list filter="[all[current]tag[Source]]">
 
-<$let targetlink={{{ [<currentTiddler>addprefix[http://example.com/]] }}}>
+<$let targetlink={{{ [{!!file}addprefix[/]addprefix{!!dataset}addprefix[https://www.justice.gov/epstein/files/]] }}}>
 <h2><a href=<<targetlink>> >Open source pdf</a></h2>
 </$let>
 
 <table>
-<$list filter="[contains:source<currentTiddler>sort[time]]">
+<$list filter="[contains:source{!!file}sort[time]]">
 <tr>
 <th style="text-align: left;"><$view field="time" format="date" template="YYYY mmm 0DD 0hh:0mm"/>. <small>{{!!from}} → {{!!to}}. <span style="float:right"><$link>Open mail in context</$link></span></small></th>
 </tr>

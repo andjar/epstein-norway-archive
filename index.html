@@ -768,6 +768,8 @@ Error message and password prompt
 
 <li>$:/StoryList</li>
 
+<li>$:/templates/has-parent</li>
+
 <li>$:/templates/hide-text</li>
 
 <li>$:/templates/mail</li>
@@ -775,6 +777,8 @@ Error message and password prompt
 <li>$:/templates/mails</li>
 
 <li>$:/templates/person</li>
+
+<li>$:/templates/source</li>
 
 <li>$:/theme</li>
 
@@ -1429,6 +1433,8 @@ Error message and password prompt
 ,
 {"title":"$:/StoryList","text":"","list":"Home","revision":"1","bag":"default"}
 ,
+{"title":"$:/templates/has-parent","code-body":"yes","created":"20260207233258476","list-before":"$:/templates/mails","modified":"20260207233805653","revision":"0","tags":"$:/tags/ViewTemplate","type":"text/vnd.tiddlywiki","text":"\u003C$list filter=\"[all[current]tag[Mail]has[parent]get[parent]addprefix[$:/mails/]]\">\n\u003C$link to=\u003C\u003CcurrentTiddler>> >Click here to open parent mail\u003C/$link>\n\u003C/$list>","bag":"default"}
+,
 {"title":"$:/templates/hide-text","created":"20260207215745881","modified":"20260207215808510","tags":"$:/tags/Stylesheet","text":".tc-tagged-Mail .tc-tiddler-body {\n    display: none;\n}","revision":"0","bag":"default"}
 ,
 {"title":"$:/templates/mail","code-body":"yes","created":"20260207174458085","modified":"20260207214845661","revision":"0","tags":"","type":"text/vnd.tiddlywiki","text":"\u003Cdiv style=\"padding: 10px;\">\n\u003Cdiv class=\"email-meta\">\n\u003Csmall>\n\u003Cspan class=\"email-from\">{{!!from}}\u003C/span> → \u003Cspan class=\"email-to\">{{!!to}}\u003C/span>\u003Cbr/>\n\u003Cb>\u003Cspan class=\"email-datetime\">\u003C$view field=\"time\" format=\"date\" template=\"ddd. DD. mmm. YY. 0hh:0mm.\"/>\u003C/span>\n\u003Cspan class=\"email-subject\"> Subject: {{!!subject}}\u003C/span>\u003C/b>\n\u003C/small>\u003C/div>\n\u003Cdiv class=\"email-content\">\n\u003Cpre>\n{{!!text}}\n\u003C/pre>\n\u003C/div>\n\n\u003Cdiv class=\"footer-sources\">\n\u003Csmall>\nSources: \n\u003C$list filter=\"[all[current]get[source]enlist-input[]addprefix[$:/sources/]]\" counter=\"counter\">\n\u003C$link>\u003C\u003Ccounter>>\u003C/$link>\n\u003C/$list>\n\u003C/small>\n\u003C/div>\n\u003C/div>","bag":"default"}
@@ -1436,6 +1442,8 @@ Error message and password prompt
 {"title":"$:/templates/mails","code-body":"yes","created":"20260207214127264","list-before":"$:/core/ui/ViewTemplate/body","modified":"20260207215658745","revision":"0","tags":"$:/tags/ViewTemplate","type":"text/vnd.tiddlywiki","text":"\u003C$list filter=\"[all[current]tag[Mail]]\">\n\u003Cdiv style=\"background: #F8F8F8\">\n{{||$:/templates/mail}}\n\u003C/div>\n\u003Cdiv style=\"padding-left: 40px\">\n\u003C$list filter=\"[parent{!!messageid}]\">\n{{||$:/templates/mails}}\n\u003C/$list>\n\u003C/div>\n\u003C/$list>","bag":"default"}
 ,
 {"title":"$:/templates/person","code-body":"yes","created":"20260207223305806","list-before":"$:/core/ui/ViewTemplate/body","modified":"20260207223336371","revision":"0","tags":"$:/tags/ViewTemplate","type":"text/vnd.tiddlywiki","text":"\u003C$list filter=\"[all[current]tag[Person]]\">\n\u003Ctable>\n\u003C$list filter=\"[tag\u003CcurrentTiddler>sort[time]]\">\n\u003Ctr>\n\u003Cth style=\"text-align: left;\">\u003C$view field=\"time\" format=\"date\" template=\"YYYY mmm 0DD 0hh:0mm\"/>. \u003Csmall>{{!!from}} → {{!!to}}. \u003Cspan style=\"float:right\">\u003C$link>Open mail in context\u003C/$link>\u003C/span>\u003C/small>\u003C/th>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd style=\"padding-left: 60px\">\n\u003Cb>{{!!subject}}\u003C/b>\n\u003Cpre>{{!!text}}\u003C/pre>\n\u003C/td>\n\u003C/tr>\n\u003C/$list>\n\u003C/table>\n\u003C/$list>","bag":"default"}
+,
+{"title":"$:/templates/source","code-body":"yes","created":"20260207234853030","list-before":"$:/core/ui/ViewTemplate/body","modified":"20260208000313991","revision":"0","tags":"$:/tags/ViewTemplate","type":"text/vnd.tiddlywiki","text":"\u003C$list filter=\"[all[current]tag[Source]get[file]]\">\n\n\u003C$let targetlink={{{ [\u003CcurrentTiddler>addprefix[http://example.com/]] }}}>\n\u003Ch2>\u003Ca href=\u003C\u003Ctargetlink>> >Open source pdf\u003C/a>\u003C/h2>\n\u003C/$let>\n\n\u003Ctable>\n\u003C$list filter=\"[contains:source\u003CcurrentTiddler>sort[time]]\">\n\u003Ctr>\n\u003Cth style=\"text-align: left;\">\u003C$view field=\"time\" format=\"date\" template=\"YYYY mmm 0DD 0hh:0mm\"/>. \u003Csmall>{{!!from}} → {{!!to}}. \u003Cspan style=\"float:right\">\u003C$link>Open mail in context\u003C/$link>\u003C/span>\u003C/small>\u003C/th>\n\u003C/tr>\n\u003Ctr>\n\u003Ctd style=\"padding-left: 60px\">\n\u003Cb>{{!!subject}}\u003C/b>\n\u003Cpre>{{!!text}}\u003C/pre>\n\u003C/td>\n\u003C/tr>\n\u003C/$list>\n\u003C/table>\n\u003C/$list>","bag":"default"}
 ,
 {"title":"$:/theme","created":"20260207170455707","modified":"20260207170455707","type":"text/vnd.tiddlywiki","text":"$:/themes/nico/notebook","revision":"0","bag":"default"}
 ,
@@ -1447,7 +1455,7 @@ Error message and password prompt
 ,
 {"title":"Boris Nikolic","created":"20260207170928004","modified":"20260207170933496","tags":"Person","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
 ,
-{"title":"Home","created":"20260207170538282","modified":"20260207223518748","revision":"0","tags":"","type":"text/vnd.tiddlywiki","text":"\u003Ctable>\n\u003Cthead>\n  \u003Ctr>\n    \u003Cth>Name\u003C/th>\n    \u003Cth>\u003C/th>\n    \u003Cth>Number of emails\u003C/th>\n  \u003C/tr>\n\u003C/thead>\n\u003C$list filter=\"[tag[Person]]\">\n\u003Ctr>\n  \u003Ctd>\u003C$link />\u003C/td>\n  \u003Ctd>\n    \u003C$button class=\"tc-btn-invisible tc-tiddlylink\">\n      \u003C$list filter=\"[tag\u003CcurrentTiddler>field:parent[]]\">\n        \u003C$action-navigate $to=\u003C\u003CcurrentTiddler>> />\n      \u003C/$list>\n      Open all mail threads\n    \u003C/$button>\n  \u003C/td>\n  \u003Ctd>\u003C$count filter=\"[tag\u003CcurrentTiddler>]\"/>\u003C/td>\n\u003C/tr>\n\u003C/$list>\n\u003C/table>","bag":"default"}
+{"title":"Home","created":"20260207170538282","modified":"20260207232948840","revision":"0","tags":"","type":"text/vnd.tiddlywiki","text":"\u003Ctable>\n\u003Cthead>\n  \u003Ctr>\n    \u003Cth>Name\u003C/th>\n    \u003Cth>\u003C/th>\n    \u003Cth>Number of emails\u003C/th>\n  \u003C/tr>\n\u003C/thead>\n\u003C$list filter=\"[tag[Person]]\">\n\u003Ctr>\n  \u003Ctd>\u003C$link />\u003C/td>\n  \u003Ctd>\n    \u003C$button class=\"tc-btn-invisible tc-tiddlylink\">\n      \u003C$list filter=\"[tag\u003CcurrentTiddler>field:parent[]]\">\n        \u003C$action-navigate $to=\u003C\u003CcurrentTiddler>> />\n      \u003C/$list>\n      Open all mail threads\n    \u003C/$button>\n  \u003C/td>\n  \u003Ctd>\u003C$count filter=\"[tag\u003CcurrentTiddler>]\"/>\u003C/td>\n\u003C/tr>\n\u003C/$list>\n\u003C/table>\n\n\u003C$list filter=\"[tag[Person]]\" variable=\"person\">\n\n!!! \u003C$link to=\u003C\u003Cperson>> />\n\n\u003Ctable>\n  \u003Cthead>\n    \u003Ctr>\n      \u003Cth style=\"background:#f4f4f4;\">Year\u003C/th>\n      \u003C$list filter=\"01 02 03 04 05 06 07 08 09 10 11 12\" variable=\"month\">\n        \u003Cth style=\"background:#f4f4f4;\">\u003C$text text={{{ [\u003Cmonth>addprefix[2024]addsuffix[01]format:date[mmm]] }}}/>\u003C/th>\n      \u003C/$list>\n      \u003Cth style=\"background:#eee;\">Total\u003C/th>\n    \u003C/tr>\n  \u003C/thead>\n  \u003Ctbody>\n    \u003C$list filter=\"[tag\u003Cperson>has[time]get[time]format:date[YYYY]unique[]sort[]]\" variable=\"year\">\n      \u003Ctr>\n        \u003Cth>\u003C\u003Cyear>>\u003C/th>\n        \u003C$list filter=\"01 02 03 04 05 06 07 08 09 10 11 12\" variable=\"month\">\n          \u003C$let \n            cellCount={{{ [tag\u003Cperson>has[time]] :filter[get[time]format:date[YYYY]match\u003Cyear>] :filter[get[time]format:date[0MM]match\u003Cmonth>] +[count[]] }}}\n            opacity={{{ [\u003CcellCount>divide[25]min[5]] }}}\n            textColor={{{ [\u003Copacity>compare:number:gt[0.6]then[white]else[black]] }}}\n          >\n            \u003Ctd style={{{ [\u003CcellCount>compare:number:gt[0]then[background-color:rgba(255, 0, 0, ]addsuffix\u003Copacity>addsuffix[);color:]addsuffix\u003CtextColor>addsuffix[;]] }}}>\n              \u003C\u003CcellCount>>\n            \u003C/td>\n          \u003C/$let>\n        \u003C/$list>\n        \u003Ctd style=\"background:#eee; font-weight:bold;\">\n          \u003C$count filter=\"[tag\u003Cperson>has[time]] :filter[get[time]format:date[YYYY]match\u003Cyear>]\"/>\n        \u003C/td>\n      \u003C/tr>\n    \u003C/$list>\n  \u003C/tbody>\n\u003C/table>\n\n\u003C/$list>","bag":"default"}
 ,
 {"title":"Jeffrey Epstein","created":"20260207170841070","modified":"20260207170925915","tags":"Person","type":"text/vnd.tiddlywiki","revision":"0","bag":"default"}
 ,

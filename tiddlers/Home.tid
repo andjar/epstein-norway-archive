@@ -65,7 +65,7 @@ Click the {{||$:/core/ui/Buttons/permalink}} to get a link to the specific mail,
     <tr>
       <th style="background:#f4f4f4;">Year</th>
       <$list filter="01 02 03 04 05 06 07 08 09 10 11 12" variable="month">
-        <th style="background:#f4f4f4;"><$text text={{{ [<month>addprefix[2024]addsuffix[01]format:date[mmm]] }}}/></th>
+        <th style="background:#f4f4f4;"><$text text={{{ [<month>addprefix[2024]addsuffix[0112]format:date[mmm]] }}}/></th>
       </$list>
       <th style="background:#eee;">Total</th>
     </tr>

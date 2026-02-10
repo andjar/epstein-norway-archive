@@ -1,5 +1,5 @@
 created: 20260207170538282
-modified: 20260210154647005
+modified: 20260210204611625
 revision: 0
 tags: 
 title: Home
@@ -10,9 +10,6 @@ type: text/vnd.tiddlywiki
 To contribute, see: https://github.com/andjar/epstein-norway-archive
 
 Click the {{||$:/core/ui/Buttons/permalink}} to get a link to the specific mail, or {{||$:/core/ui/Buttons/export-tiddler}} to export it. There is also an edit button: {{||$:/core/ui/Buttons/edit}}, but changes must be downloaded and pushed to the github repository to have any effect.
-
-''Search in mails'': <$edit-text tiddler="$:/temp/search" tag="input"/>
-{{$:/search}}
 
 !! Content
 

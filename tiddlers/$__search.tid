@@ -1,25 +1,35 @@
+code-body: yes
 created: 20260210154622650
-modified: 20260210154636709
+modified: 20260210203940207
+revision: 0
 tags: 
 title: $:/search
 
-<$list filter="[{$:/temp/search}minlength[3]]">
-<$list filter="[all[tiddlers+shadows]tag[Mail]search:text{$:/temp/search}sort[title]]">
-<dl>
-<dt>
-<$link>
-<$text text=<<currentTiddler>>/>
-</$link>
-</dt>
-<dd>
-<b><small><$view field="time" format="date" template="YYYY-0MM-0DD 0hh:0mm."/>. {{!!from}} → {{!!to}}</small></b>
-<$dynannotate
-	search={{$:/temp/search}}
-	searchMode="whitespace"
-	searchDisplay="snippet"
-><$transclude tiddler=<<currentTiddler>> mode="block"/>
-</$dynannotate>
-</dd>
-</dl>
+<div class="tc-search-results">
+<$list filter="[{$:/temp/search}minlength[3]]" variable="ignore">
+   <$list filter="[all[tiddlers+shadows]tag[Mail]search:text{$:/temp/search}sort[time]]">
+      <div class="mail-search-container">
+         <div style="font-size:0.7em; margin-bottom:2px;">
+            <$link><$text text=<<currentTiddler>>/></$link>
+         </div>
+
+         <div class="mail-header-line">
+            <span><$view field="time" format="date" template="YYYY-0MM-0DD 0hh:0mm"/>.</span>
+            {{!!from}} 
+            <span>&rarr;</span> 
+            {{!!to}}
+         </div>
+
+         <div class="mail-body-snippet">
+            <$dynannotate
+               search={{$:/temp/search}}
+               searchMode="whitespace"
+               searchDisplay="snippet"
+            >
+               <$transclude mode="block"/>
+            </$dynannotate>
+         </div>
+      </div>
+   </$list>
 </$list>
-</$list>
+</div>

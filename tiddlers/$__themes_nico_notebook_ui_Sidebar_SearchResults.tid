@@ -1,0 +1,9 @@
+created: 20200429191943257
+modified: 20260210203343079
+tags: 
+title: $:/themes/nico/notebook/ui/Sidebar/SearchResults
+type: text/vnd.tiddlywiki
+
+<div class="tc-search-results">
+  {{$:/search}}
+</div>

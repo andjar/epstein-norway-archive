@@ -1,0 +1,49 @@
+created: 20260210203712095
+modified: 20260210204121692
+tags: $:/tags/Stylesheet
+title: $:/style/search
+
+.tc-search-results {
+    overflow-x: hidden; /* Hard stop for horizontal scrolling */
+}
+
+.mail-search-container {
+    padding: 8px 0;
+    border-bottom: 1px solid <<colour table-border>>;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.mail-header-line {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap; 
+    /* These three lines prevent the scrollbar by cutting off text */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Force the links within the header to shrink and truncate if they are too long */
+.mail-header-line a {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 1;
+}
+
+/* Fix for the long UUID title links */
+.mail-title-link {
+    font-size: 0.7em;
+    margin-bottom: 2px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

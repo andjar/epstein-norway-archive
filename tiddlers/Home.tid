@@ -1,5 +1,5 @@
 created: 20260207170538282
-modified: 20260208191239099
+modified: 20260210154647005
 revision: 0
 tags: 
 title: Home
@@ -9,26 +9,10 @@ type: text/vnd.tiddlywiki
 
 To contribute, see: https://github.com/andjar/epstein-norway-archive
 
-Click the {{||$:/core/ui/Buttons/permalink}} to get a link to the specific mail, or {{||$:/core/ui/Buttons/export-tiddler}} to export it. There is also an edit button: {{||$:/core/ui/Buttons/edit}}, but changes must be downloaded and pushed to the github repository to have any effect. Some useful tools:
+Click the {{||$:/core/ui/Buttons/permalink}} to get a link to the specific mail, or {{||$:/core/ui/Buttons/export-tiddler}} to export it. There is also an edit button: {{||$:/core/ui/Buttons/edit}}, but changes must be downloaded and pushed to the github repository to have any effect.
 
-<$let tv-config-toolbar-icons="yes"
-	tv-config-toolbar-text="yes"
-	tv-config-toolbar-class=""
->
-	<$list filter="$:/core/ui/Buttons/export-page $:/core/ui/Buttons/advanced-search
-
-
-" variable="listItem">
-		<div class={{{ [<listItem>encodeuricomponent[]addprefix[tc-btn-]] tc-sidebar-tools-item +[join[ ]] }}}
-			data-title=<<listItem>>
-		>
-				<$transclude $tiddler=<<listItem>>/>
-				<i class="tc-tiny-gap-left tc-muted">
-					<$transclude $tiddler=<<listItem>> $field="description"/>
-				</i>
-		</div>
-	</$list>
-</$let>
+''Search in mails'': <$edit-text tiddler="$:/temp/search" tag="input"/>
+{{$:/search}}
 
 !! Content
 

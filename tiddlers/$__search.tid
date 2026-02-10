@@ -1,0 +1,25 @@
+created: 20260210154622650
+modified: 20260210154636709
+tags: 
+title: $:/search
+
+<$list filter="[{$:/temp/search}minlength[3]]">
+<$list filter="[all[tiddlers+shadows]tag[Mail]search:text{$:/temp/search}sort[title]]">
+<dl>
+<dt>
+<$link>
+<$text text=<<currentTiddler>>/>
+</$link>
+</dt>
+<dd>
+<b><small><$view field="time" format="date" template="YYYY-0MM-0DD 0hh:0mm."/>. {{!!from}} → {{!!to}}</small></b>
+<$dynannotate
+	search={{$:/temp/search}}
+	searchMode="whitespace"
+	searchDisplay="snippet"
+><$transclude tiddler=<<currentTiddler>> mode="block"/>
+</$dynannotate>
+</dd>
+</dl>
+</$list>
+</$list>
